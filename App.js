@@ -1,26 +1,27 @@
 
+ import  React ,{Component} from 'react';
+ import  RootNavigator from './app/RootNavigator';
+ import store from './app/Store';
+ import {Provider} from 'react-redux';
 
-import  React ,{Component} from 'react';
-import  Profile from './app/Profile';
 
-import  RootNavigator from './app/RootNavigator';
+
 
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
-  Text,
-  StatusBar,
 } from 'react-native';
+import Profile from './app/Profile';
 
 class App extends Component
 {
   render() {
     return(
-      <View style ={styles.container}>
+    <Provider store={store}>
        <RootNavigator />
-      </View>
+    </Provider>
+       
+     
     );
   }
 }

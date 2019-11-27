@@ -9,6 +9,8 @@ import Header from './Header';
 import { FlatList  } from 'react-navigation'
 
 
+
+
 class Home extends Component
 {
     constructor (){
@@ -25,6 +27,9 @@ class Home extends Component
   componentWillMount(){
        this.getDataList();
     }
+
+
+   
 
     //componentDidMount(){
        // this.getDataList();
@@ -154,6 +159,8 @@ const styles = StyleSheet.create({
     {
         marginTop : 10,
         alignItems :'center',
+        width : 50 ,
+        height :50
 
     },
 });

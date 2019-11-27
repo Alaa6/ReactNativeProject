@@ -6,11 +6,10 @@ import {createDrawerNavigator} from 'react-navigation-drawer';
 
 import { createAppContainer } from 'react-navigation';
 import  Header  from './Header';
-import  Login  from './LoginForm';
+import  Login from './LoginForm';
 import  Profile  from './Profile';
 
 import DrawerNavigator from './DrawerNavigator';
-
 
 
 

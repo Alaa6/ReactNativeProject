@@ -7,7 +7,7 @@ import MapView ,{Marker} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 
 
-const GOOGLE_MAPS_APIKEY  ='AIzaSyCeu4epNrfSsKrIzhjLLr__KBMIhKm9Sak';
+const GOOGLE_MAPS_APIKEY  ='';
 
 class DisplayMap extends Component {
 
@@ -58,6 +58,7 @@ handlePress (e){
                latitude: 30.026300,
                 longitude:  31.496773,
                 }}
+                
                 title = {'Alaa Home'}
                 description ={'هنا يرقد حزلقوم '}
              />

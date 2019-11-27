@@ -1,6 +1,7 @@
 import React ,{ Component } from 'react';
-import { GiftedChat } from 'react-native-gifted-chat'
+import { GiftedChat  } from 'react-native-gifted-chat'
 import Fire from './Fire'
+import { View, Text } from 'react-native';
 
 
   
@@ -19,6 +20,8 @@ class Chat extends Component {
    /*________________________state : array of messages_______________________________________ */
     state ={
         messages : [] ,
+        typing : false ,
+        text :''
     };
  
     /*_______________________________________________________________ */
@@ -26,7 +29,7 @@ class Chat extends Component {
     {
         return ({
            
-           name : this.props.navigation.getParam('name'),
+          email : this.props.navigation.getParam('Email'),
             _id :Fire.shared.uid,
         });
     }
@@ -38,13 +41,43 @@ class Chat extends Component {
         //}))
       //}
 
-  /*_______________________________________________________________ */
+  /*____________________________render footer___________________________________ */
+     
+  //onInputTextChanged = text => this.setState({ text});
+
+      
+  
+  /*renderChatFooter=()=>{
+    if(this.onInputTextChanged!= null)
+    {
+      this.setState({
+        typing :true ,
+
+      });
+      return <Text> user is typing </Text>
+    }
+
+
+
+      }*/
+
+      
+  /*___________________________render____________________________________ */
     render(){
         return (
+         
+        
             <GiftedChat 
             messages ={this.state.messages} // the array of messages from state
             onSend ={Fire.shared.send}
-            user ={this.user}/>
+            user ={this.user}
+            onInputTextChanged ={this.onInputTextChanged}
+            renderChatFooter ={this.renderChatFooter}
+          
+          />
+
+           
+            
         );
     }
  /*_______________________________________________________________ */
@@ -57,6 +90,7 @@ class Chat extends Component {
 
  /*_______________________________________________________________ */
     componentDidMount(){
+    
         Fire.shared.on(NewMessage => this.setState(previousState =>({
             messages :GiftedChat.append(previousState.messages ,NewMessage)
 
